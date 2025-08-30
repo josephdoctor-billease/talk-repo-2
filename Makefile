@@ -62,10 +62,8 @@ docker-clean: docker-down
 # Testing
 test: docker-up
 	@echo "Running full test suite (unit + integration tests)..."
-	@echo "Running unit tests..."
-	uv run pytest tests/unit/ -v --cov-report=html --cov-report=term-missing --cov-report=xml
-	@echo "Running integration tests..."
-	uv run pytest tests/integration/ -v --disable-warnings
+	@echo "Running tests..."
+	uv run pytest tests/ -v --cov-report=html --cov-report=term-missing --cov-report=xml
 	@echo "Test completed. See htmlcov/index.html for coverage report"
 
 test-unit:
